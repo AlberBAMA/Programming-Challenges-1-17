@@ -1,0 +1,24 @@
+import java.util.ArrayList; // Importación necesaria
+
+public class PhoneBookProgram {
+    public static void main(String[] args) {
+        // ArrayList to save objects from PhoneBookEntryHomework
+        ArrayList<PhoneBookEntryHomework> Person = new ArrayList<>();
+
+        // Objects stored in the ArrayList
+        Person.add(new PhoneBookEntryHomework("Alber Baez", "201-903-6060"));
+        Person.add(new PhoneBookEntryHomework("Omar Almonte", "201-555-0202"));
+        Person.add(new PhoneBookEntryHomework("Francisco Guerrero", "201-555-0303"));
+        Person.add(new PhoneBookEntryHomework("Xaviel Del Villar", "201-555-0404"));
+        Person.add(new PhoneBookEntryHomework("Justin Duran", "201-555-0505"));
+
+        System.out.println("----- Phone book ------");
+
+        // Loop to show the content
+        for (PhoneBookEntryHomework entry : Person) {
+            System.out.println("Name: " + entry.getName());
+            System.out.println("Phone number: " + entry.getPhoneNumber());
+            System.out.println("----------------------------------");
+        }
+    }
+}
