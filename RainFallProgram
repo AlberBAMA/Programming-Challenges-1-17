@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class RainFallProgram {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        double[] tempRain = new double[12];
+
+        System.out.println("Type the monthly rain for each month!");
+
+        for (int i = 0; i < 12; i++) {
+            System.out.print("Month " + (i + 1) + ": ");
+            double input = keyboard.nextDouble();
+
+            // Validation
+            while (input < 0) {
+                System.out.print("Negative numbers are not accepted, try again!" + (i + 1) + ": ");
+                input = keyboard.nextDouble();
+            }
+            tempRain[i] = input;
+        }
+
+        // Show the results
+        RainFallHomework rf = new RainFallHomework(tempRain);
+
+        System.out.println("\n------- Results ------");
+        System.out.printf("Yearly total: %.2f\n", rf.getTotal());
+        System.out.printf("Monthly average: %.2f\n", rf.getAverage());
+        System.out.println("Month with more rain: " + rf.getMostRainMonth());
+        System.out.println("Month with least rain: " + rf.getLeastRainMonth());
+    }
+}
