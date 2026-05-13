@@ -1,0 +1,45 @@
+public class RainFallHomework {
+
+    private double[] rain;
+
+    // Constructor
+    public RainFallHomework(double[] data) {
+        rain = data.clone();
+    }
+
+    // Calculate the total
+    public double getTotal() {
+        double total = 0;
+        for (double val : rain) {
+            total += val;
+        }
+        return total;
+    }
+
+    // Calculate the average
+    public double getAverage() {
+        return getTotal() / rain.length;
+    }
+
+    // Month with more rain
+    public int getMostRainMonth() {
+        int highest = 0;
+        for (int i = 1; i < rain.length; i++) {
+            if (rain[i] > rain[highest]) {
+                highest = i;
+            }
+        }
+        return highest + 1;
+    }
+
+    // Month with least rain
+    public int getLeastRainMonth() {
+        int lowest = 0;
+        for (int i = 1; i < rain.length; i++) {
+            if (rain[i] < rain[lowest]) {
+                lowest = i;
+            }
+        }
+        return lowest + 1;
+    }
+}
